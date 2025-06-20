@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L] 
+
+# /group → /pages/group.php
+RewriteRule ^([a-zA-Z0-9_-]+)$ pages/$1.php [L]
+ErrorDocument 404 /404.php
